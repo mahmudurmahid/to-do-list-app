@@ -1,4 +1,4 @@
 clean
 prepare
-throw
-take out
+throw out
+make

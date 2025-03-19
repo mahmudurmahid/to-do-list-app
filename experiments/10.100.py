@@ -1,0 +1,1 @@
+# no content - shows syntax errors in terminal to highlight difference between syntax errors, index errors and value errors
