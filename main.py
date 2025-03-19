@@ -2,8 +2,8 @@ while True:
     user_action = input("Type add, show, edit, complete, or exit: ")
     user_action = user_action.strip().lower()
 
-    match user_action:
-        case "add":
+
+        if "add" in user_action:
             todo = input("Enter your todo: ") + "\n"
 
             with open("files/todos.txt", "r") as file:
@@ -14,7 +14,7 @@ while True:
             with open("files/todos.txt", "w") as file:
                 file.writelines(todos)
 
-        case "show":
+        if "show" in user_action:
             with open("files/todos.txt", "r") as file:
                 todos = file.readlines()
             # new_todos = [item.strip("\n") for item in todos] # List comprehension example
@@ -22,7 +22,7 @@ while True:
                 item = item.strip("\n")
                 row = f"{index + 1}-{item}"
                 print(row)
-        case "edit":
+        if "edit" in user_action:
             number = int(input("Enter the number of the todo you want to edit: "))
             number = number - 1
 
@@ -35,7 +35,7 @@ while True:
             with open("files/todos.txt", "w") as file:
                 file.writelines(todos)
 
-        case "complete":
+        if "complete" in user_action:
             number = int(input("Enter the number of the todo you have completed: "))
 
             with open("files/todos.txt", "r") as file:
@@ -50,7 +50,7 @@ while True:
             message = f"Todo number {todo_to_remove} has been completed and removed from the list."
             print(message)
 
-        case "exit":
+        if "exit" in user_action:
             break
 
 print("Goodbye!")
