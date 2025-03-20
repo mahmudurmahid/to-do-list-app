@@ -1,7 +1,12 @@
-def get_todos():
-    with open("files/todos.txt", "r") as file_local:
+def get_todos(filepath):
+    with open(filepath, "r") as file_local:
         todos_local = file_local.readlines()
     return todos_local
+
+# write_todos function behaves as a procedure because it does not return a value
+def write_todos(filepath, todos_arg):
+    with open(filepath, "w") as file:
+        file.writelines(todos_arg)
 
 
 while True:
@@ -12,15 +17,14 @@ while True:
     if user_action.startswith("add"):
         todo = user_action[4:]
 
-        todos = get_todos()
+        todos = get_todos("files/todos.txt")
 
         todos.append(todo + "\n")
 
-        with open("files/todos.txt", "w") as file:
-            file.writelines(todos)
+        write_todos("files/todos.txt", todos)
 
     elif user_action.startswith("show"):
-        todos = get_todos()
+        todos = get_todos("files/todos.txt")
         # new_todos = [item.strip("\n") for item in todos] # List comprehension example
         for index, item in enumerate(todos):
             item = item.strip("\n")
@@ -32,13 +36,12 @@ while True:
             number = int(user_action[5:])
             number = number - 1
 
-            todos = get_todos()
+            todos = get_todos("files/todos.txt")
             
             new_todo = input("Enter the new todo: ")
             todos[number] = new_todo + "\n"
 
-            with open("files/todos.txt", "w") as file:
-                file.writelines(todos)
+            write_todos("files/todos.txt", todos)
         except ValueError:
             print("Invalid number. Please try again.")
             continue
@@ -47,14 +50,14 @@ while True:
         try:
             number = int(user_action[9:])
 
-            todos = get_todos()
+            todos = get_todos("files/todos.txt")
 
             index = number - 1
             todo_to_remove = todos[index].strip("\n")
             todos.pop(index)
 
-            with open("files/todos.txt", "w") as file:
-                file.writelines(todos)
+            write_todos("files/todos.txt", todos)
+
             message = f"Todo number {todo_to_remove} has been completed and removed from the list."
             print(message)
         except IndexError:
