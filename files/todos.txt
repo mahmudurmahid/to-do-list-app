@@ -4,3 +4,5 @@ throw away
 cook lunch
 wash
 learn
+fix it
+add
