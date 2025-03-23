@@ -2,3 +2,5 @@ clean
 prepare
 throw away
 cook lunch
+wash
+learn
