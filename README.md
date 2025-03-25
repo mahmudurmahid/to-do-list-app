@@ -154,6 +154,8 @@ git clone https://github.com/mahmudurmahid/to-do-list-app.git
 cd to-do-list-app
 ```
 
+---
+
 ## ✅ Testing
 
 Manual testing was performed on all interfaces:
