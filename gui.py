@@ -2,6 +2,7 @@ from functions import get_todos, write_todos
 import FreeSimpleGUI as sg
 import time
 
+# GUI front end structure
 sg.theme("DarkPurple4")
 
 clock = sg.Text("", key="clock")
@@ -22,6 +23,7 @@ window = sg.Window("My To Do App",
                            [exit_button]],
                    font=("Helvetica", 20))
 
+# Backend logic
 while True:
     event, values = window.read(timeout=200)
     window["clock"].update(value=time.strftime("%d %b %Y, %H:%M:%S"))
@@ -65,6 +67,5 @@ while True:
 
         case sg.WIN_CLOSED:
             break
-
 
 window.close() 
