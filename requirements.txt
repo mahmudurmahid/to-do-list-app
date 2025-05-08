@@ -11,7 +11,7 @@ GitPython==3.1.44
 idna==3.10
 Jinja2==3.1.6
 jsonschema==4.23.0
-jsonschema-specifications==2024.10.1
+jsonschema-specifications==2025.4.1
 MarkupSafe==3.0.2
 narwhals==1.32.0
 numpy==2.2.4
@@ -28,7 +28,7 @@ requests==2.32.3
 rpds-py==0.23.1
 six==1.17.0
 smmap==5.0.2
-streamlit==1.43.2
+streamlit==1.45.0
 tenacity==9.0.0
 toml==0.10.2
 tornado==6.4.2
